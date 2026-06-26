@@ -1,0 +1,290 @@
+% ======================================================================
+%  Topological Photonics from Maxwell's Equations
+%  A Maxwell-First Monograph
+%  Target: Cambridge Monographs on Mathematical Physics
+% ======================================================================
+\documentclass[11pt,twoside,openright]{book}
+
+% ---- Geometry (Cambridge Monographs style: ~6.85 x 9.72 in text block) ----
+\usepackage[
+  paperwidth=7.44in,
+  paperheight=9.69in,
+  inner=0.88in,
+  outer=0.59in,
+  top=0.79in,
+  bottom=0.79in,
+  headheight=14pt,
+  headsep=20pt,
+  footskip=30pt
+]{geometry}
+
+% ---- Fonts (LuaLaTeX) ----
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
+
+% ---- Mathematics ----
+% Load AMS mathematics before unicode-math.  Do not load amssymb with
+% unicode-math under LuaLaTeX, because several symbols are defined twice.
+\usepackage{amsmath,amsthm}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Topological Photonics from Maxwell's Equations},
+  pdfauthor={Qiushi Research Draft},
+  pdfsubject={Topological photonics},
+  pdfkeywords={Maxwell equations, topological photonics, Chern number, photonic crystals}
+}
+\usepackage{cleveref}
+
+% ---- Bibliography ----
+\usepackage[
+  backend=biber,
+  style=phys,
+  articletitle=true,
+  biblabel=brackets,
+  chaptertitle=false,
+  pageranges=true,
+  sorting=none,
+  maxbibnames=10
+]{biblatex}
+\addbibresource{refs.bib}
+
+% ---- Headers and footers ----
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape\nouppercase{\leftmark}}
+\fancyhead[RO]{\small\itshape\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- Custom macros ----
+\input{macros}
+
+% ---- Chapter title formatting ----
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}
+  {\chaptertitlename\ \thechapter}{16pt}{\LARGE}
+\titlespacing*{\chapter}{0pt}{40pt}{30pt}
+
+% ---- Index ----
+\usepackage{makeidx}
+\makeindex
+
+% ---- TOC number width ----
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.4em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{4.9em}{4.2em}}
+\makeatother
+
+% ======================================================================
+\begin{document}
+
+% ---- Front matter ----
+\frontmatter
+
+% ---- Half title ----
+\begin{titlepage}
+\vspace*{3cm}
+\begin{center}
+{\LARGE\bfseries Topological Photonics\\[6pt]
+from Maxwell's Equations}
+\end{center}
+\end{titlepage}
+
+% ---- Series page ----
+\thispagestyle{empty}
+\vspace*{4cm}
+\begin{center}
+{\large CAMBRIDGE MONOGRAPHS ON\\MATHEMATICAL PHYSICS}\\[12pt]
+{\itshape Submission draft prepared in Cambridge Monographs style}
+\end{center}
+\cleardoublepage
+
+% ---- Title page ----
+\begin{titlepage}
+\vspace*{2cm}
+\begin{center}
+{\huge\bfseries Topological Photonics\\[6pt]
+from Maxwell's Equations}\\[2cm]
+{\Large A Maxwell-First Foundation for\\Topological Phases of Light}\\[3cm]
+\vfill
+{\itshape Submission draft prepared in Cambridge Monographs style}
+\end{center}
+\end{titlepage}
+
+% ---- Copyright page ----
+\thispagestyle{empty}
+\vspace*{\fill}
+\noindent\textcopyright\ 2025 The Author(s)\\
+All rights reserved. No part of this publication may be
+reproduced without prior written permission.\\[6pt]
+\textit{Submission draft --- not for distribution.}\\[6pt]
+Prepared in the style of Cambridge Monographs on Mathematical Physics.
+\cleardoublepage
+
+% ---- Dedication ----
+\thispagestyle{empty}
+\vspace*{4cm}
+\begin{center}
+\itshape To those who first saw topology in light
+\end{center}
+\cleardoublepage
+
+% ---- Table of contents ----
+\tableofcontents
+\cleardoublepage
+
+% ---- Preface ----
+\input{chapters/ch00_preface}
+
+% ---- Notation ----
+\input{chapters/ch00_notation}
+
+% ======================================================================
+\mainmatter
+
+% ---- Part I: Maxwell Modes and Optical Bands ----
+\part{Maxwell Modes and Optical Bands}
+
+\chapter{The Problem of Robust Light}
+\label{ch:robust-light}
+\input{chapters/ch01_robust_light}
+
+\chapter{Maxwell Equations as Dynamics}
+\label{ch:maxwell-dynamics}
+\input{chapters/ch02_maxwell_dynamics}
+
+\chapter{Normal Modes and the Electromagnetic Inner Product}
+\label{ch:normal-modes}
+\input{chapters/ch03_normal_modes}
+
+\chapter{Periodic Media and Photonic Bands}
+\label{ch:periodic-media}
+\input{chapters/ch04_periodic_media}
+
+\chapter{Geometry of Maxwell Bands}
+\label{ch:geometry-bands}
+\input{chapters/ch05_geometry_bands}
+
+% ---- Part II: Chern Bands and One-Way Waveguides ----
+\part{Chern Bands and One-Way Waveguides}
+
+\chapter{Dirac Cones of Light}
+\label{ch:dirac-cones}
+\input{chapters/ch06_dirac_cones}
+
+\chapter{Breaking Time Reversal}
+\label{ch:breaking-tr}
+\input{chapters/ch07_breaking_tr}
+
+\chapter{The One-Way Interface}
+\label{ch:one-way-interface}
+\input{chapters/ch08_one_way_interface}
+
+\chapter{A Microwave Topological Crystal}
+\label{ch:microwave-crystal}
+\input{chapters/ch09_microwave_crystal}
+
+\chapter{Computing Chern Numbers}
+\label{ch:computing-chern}
+\input{chapters/ch10_computing_chern}
+
+% ---- Part III: Other Two-Dimensional Phases ----
+\part{Other Two-Dimensional Phases}
+
+\chapter{Reciprocal Designs and Pseudospin}
+\label{ch:reciprocal-designs}
+\input{chapters/ch11_reciprocal_designs}
+
+\chapter{Valleys and Lattices}
+\label{ch:valleys}
+\input{chapters/ch12_valleys}
+
+\chapter{Floquet Light}
+\label{ch:floquet}
+\input{chapters/ch13_floquet}
+
+\chapter{One Dimension}
+\label{ch:one-dimension}
+\input{chapters/ch14_one_dimension}
+
+% ---- Part IV: Three Dimensions and Beyond ----
+\part{Three Dimensions and Beyond}
+
+\chapter{Weyl Points of Maxwell Bands}
+\label{ch:weyl-points}
+\input{chapters/ch15_weyl_points}
+
+\chapter{Synthetic Dimensions}
+\label{ch:synthetic-dimensions}
+\input{chapters/ch16_synthetic_dimensions}
+
+% ---- Part V: Imperfect, Active, and Nonlinear Light ----
+\part{Imperfect, Active, and Nonlinear Light}
+
+\chapter{Loss, Gain, and Non-Hermitian Topology}
+\label{ch:non-hermitian}
+\input{chapters/ch17_non_hermitian}
+
+\chapter{Nonlinear and Quantum Frontiers}
+\label{ch:nonlinear-quantum}
+\input{chapters/ch18_nonlinear_quantum}
+
+% ======================================================================
+\appendix
+\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
+
+\chapter{Vector Identities and Functional Analysis}
+\label{app:vector-identities}
+\input{chapters/appA_vector_identities}
+
+\chapter{Differential Forms and Chern Classes}
+\label{app:diff-forms}
+\input{chapters/appB_diff_forms}
+
+\chapter{Numerical Recipes}
+\label{app:numerical-recipes}
+\input{chapters/appC_numerical_recipes}
+
+\chapter{Material Tensors and Sign Conventions}
+\label{app:material-tensors}
+\input{chapters/appD_material_tensors}
+
+% ======================================================================
+\backmatter
+
+% ---- Bibliography ----
+\printbibliography[heading=bibintoc,title={References}]
+
+% ---- Index ----
+\printindex
+
+\end{document}

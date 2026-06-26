@@ -1,0 +1,84 @@
+﻿GitHub upload source package
+Created: 2026-06-26 15:10:29
+Source: D:\Work\doc0\Tutorial of Topological Photonics\3rd_edition\deliverables (10)(1)\book
+
+Included files:
+  chapters\appA_vector_identities.tex
+  chapters\appB_diff_forms.tex
+  chapters\appC_numerical_recipes.tex
+  chapters\appD_material_tensors.tex
+  chapters\ch00_notation.tex
+  chapters\ch00_preface.tex
+  chapters\ch01_robust_light.tex
+  chapters\ch02_maxwell_dynamics.tex
+  chapters\ch03_normal_modes.tex
+  chapters\ch04_periodic_media.tex
+  chapters\ch05_geometry_bands.tex
+  chapters\ch06_dirac_cones.tex
+  chapters\ch07_breaking_tr.tex
+  chapters\ch08_one_way_interface.tex
+  chapters\ch09_microwave_crystal.tex
+  chapters\ch10_computing_chern.tex
+  chapters\ch11_reciprocal_designs.tex
+  chapters\ch12_valleys.tex
+  chapters\ch13_floquet.tex
+  chapters\ch14_one_dimension.tex
+  chapters\ch15_weyl_points.tex
+  chapters\ch16_synthetic_dimensions.tex
+  chapters\ch17_non_hermitian.tex
+  chapters\ch18_nonlinear_quantum.tex
+  figures\fig_appA_ibp_boundary.pdf
+  figures\fig_appB_bloch_bundle_forms.pdf
+  figures\fig_appC_numerical_workflow_step178.pdf
+  figures\fig_appD_polder_sign_conventions.pdf
+  figures\fig_berry_curvature_flux.pdf
+  figures\fig_ch02_maxwell_blocks.pdf
+  figures\fig_ch02_operator_structure_step199.pdf
+  figures\fig_ch03_dispersive_metric_step199.pdf
+  figures\fig_ch03_energy_metric.pdf
+  figures\fig_ch04_bloch_brillouin.pdf
+  figures\fig_ch04_pwe_convergence_step178.pdf
+  figures\fig_ch05_anomalous_velocity_step199.pdf
+  figures\fig_ch05_berry_bundle.pdf
+  figures\fig_ch06_dirac_pair_chirality.pdf
+  figures\fig_ch06_linear_quadratic_touching_step178.pdf
+  figures\fig_ch06_valley_mass_taxonomy_step236.pdf
+  figures\fig_ch07_gyrotropic_mass_reversal_step236.pdf
+  figures\fig_ch08_edge_mode_profile_step199.pdf
+  figures\fig_ch09_polder_response_step178.pdf
+  figures\fig_ch09_scattering_isolation_map_step236.pdf
+  figures\fig_ch09_yig_polder_response.pdf
+  figures\fig_ch10_bz_sewing_step236.pdf
+  figures\fig_ch10_wilson_loop_step178.pdf
+  figures\fig_ch11_reciprocal_designs.pdf
+  figures\fig_ch12_valley_domain_wall.pdf
+  figures\fig_ch12_valley_hall_step199.pdf
+  figures\fig_ch13_floquet_quasienergy_step199.pdf
+  figures\fig_ch13_floquet_winding.pdf
+  figures\fig_ch14_ricemele_pump_step178.pdf
+  figures\fig_ch14_ssh_edge_decay.pdf
+  figures\fig_ch15_weyl_annihilation_step178.pdf
+  figures\fig_ch15_weyl_chern_slices_step236.pdf
+  figures\fig_ch15_weyl_fermi_arc.pdf
+  figures\fig_ch16_synthetic_pump_step199.pdf
+  figures\fig_ch17_exceptional_riemann_step178.pdf
+  figures\fig_ch18_bound_pair_binding_log_step236.pdf
+  figures\fig_ch18_quantum_edge_channel.pdf
+  figures\fig_ch18_quantum_edge_step199.pdf
+  figures\fig_domain_wall_mode.pdf
+  figures\fig_massive_dirac_gap.pdf
+  figures\fig_nonhermitian_skin_gbz.pdf
+  figures\fig_plaquette_chern.pdf
+  figures\fig_qwz_chern_convergence.pdf
+  figures\fig_synthetic_frequency_ladder.pdf
+  figures\fig_wang_experiment_schematic.pdf
+  macros.tex
+  main.tex
+  refs.bib
+  .gitignore
+  .github/workflows/ (empty directory)
+
+Missing referenced files:
+  None
+
+Policy note: LaTeX intermediate files and the generated root main.pdf were not copied. Figure PDFs referenced by the active TeX sources were copied because they are required source assets.

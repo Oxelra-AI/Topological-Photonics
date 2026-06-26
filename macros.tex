@@ -1,0 +1,95 @@
+% ======================================================================
+%  macros.tex — Custom macros for Topological Photonics monograph
+% ======================================================================
+
+% ---- Electromagnetic fields ----
+\newcommand{\Efield}{\mathbf{E}}
+\newcommand{\Hfield}{\mathbf{H}}
+\newcommand{\Dfield}{\mathbf{D}}
+\newcommand{\Bfield}{\mathbf{B}}
+\newcommand{\Jfield}{\mathbf{J}}
+\newcommand{\Sfield}{\mathbf{S}}        % Poynting vector
+\newcommand{\emfield}{\mathbf{f}}        % six-component EM field (E,H)^T
+\newcommand{\emfieldw}{\mathbf{w}}       % energy-weighted EM field M^{1/2}f
+
+% ---- Operators ----
+\newcommand{\Maxop}{\hat{\mathcal{N}}}   % Maxwell curl operator
+\newcommand{\Matop}{\hat{\mathcal{M}}}   % material matrix operator
+\newcommand{\Hamop}{\hat{\mathcal{H}}}   % effective Hamiltonian M^{-1}N
+\newcommand{\Blochop}{\hat{\Theta}}      % Bloch-Maxwell operator
+
+% ---- Material tensors ----
+\newcommand{\epst}{\boldsymbol{\varepsilon}}   % permittivity tensor
+\newcommand{\mut}{\boldsymbol{\mu}}            % permeability tensor
+\newcommand{\xit}{\boldsymbol{\xi}}            % bianisotropic coupling
+\newcommand{\zetat}{\boldsymbol{\zeta}}        % bianisotropic coupling
+\newcommand{\Mmat}{\mathbf{M}}                 % 6x6 material matrix
+\newcommand{\Mgmat}{\mathbf{M}_g}             % energy (dispersive) metric
+
+% ---- Wavevectors and positions ----
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\Gvec}{\mathbf{G}}          % reciprocal lattice vector
+\newcommand{\avec}{\mathbf{a}}          % lattice vector
+\newcommand{\bvec}{\mathbf{b}}          % reciprocal basis vector
+
+% ---- Berry geometry ----
+\newcommand{\Aberry}{\mathcal{A}}        % Berry connection (scalar/1-form)
+\newcommand{\Aberryvec}{\boldsymbol{\mathcal{A}}}  % Berry connection vector
+\newcommand{\Fberry}{\mathcal{F}}        % Berry curvature (scalar/2-form)
+\newcommand{\Fberryvec}{\boldsymbol{\Omega}}       % Berry curvature vector
+\newcommand{\Chern}{\mathcal{C}}         % Chern number
+\newcommand{\Zak}{\gamma_{\mathrm{Zak}}} % Zak phase
+\newcommand{\Wloop}{\mathcal{W}}         % Wilson loop
+
+% ---- Inner products ----
+% Electromagnetic inner product with material matrix
+\newcommand{\emip}[2]{\langle #1 , #2 \rangle_{\Mmat}}
+% Standard inner product
+\newcommand{\sip}[2]{\langle #1 | #2 \rangle}
+% Energy inner product with dispersive metric
+\newcommand{\eip}[2]{\langle #1 , #2 \rangle_{\Mgmat}}
+
+% ---- Brillouin zone ----
+\newcommand{\BZ}{\mathrm{BZ}}
+\newcommand{\FBZ}{\mathrm{FBZ}}
+
+% ---- Mode labels ----
+\newcommand{\TE}{\mathrm{TE}}
+\newcommand{\TM}{\mathrm{TM}}
+
+% ---- Symmetry operations ----
+\newcommand{\Top}{\hat{\mathcal{T}}}     % time reversal
+\newcommand{\Pop}{\hat{\mathcal{P}}}     % parity / inversion
+\newcommand{\Cop}{\hat{\mathcal{C}}}     % particle-hole / charge conjugation
+\newcommand{\PT}{\mathcal{PT}}           % combined PT
+
+% ---- Units and constants ----
+\newcommand{\vac}{\varepsilon_0}
+\newcommand{\muvac}{\mu_0}
+\newcommand{\clight}{c}
+
+% ---- Miscellaneous ----
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\imag}{\mathrm{Im}}
+\newcommand{\real}{\mathrm{Re}}
+\newcommand{\dd}{\mathrm{d}}             % upright differential
+\newcommand{\ii}{\mathrm{i}}             % imaginary unit
+\newcommand{\ee}{\mathrm{e}}             % Euler number
+\DeclareMathOperator{\curl}{curl}
+
+% ---- Equation shortcuts ----
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\tderiv}[2]{\frac{\dd #1}{\dd #2}}
+
+% ---- Cross-reference shortcuts ----
+\newcommand{\chref}[1]{Chapter~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\eqnref}[1]{Eq.~\eqref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}

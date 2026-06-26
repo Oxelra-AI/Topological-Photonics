@@ -1,0 +1,129 @@
+% ======================================================================
+%  Preface
+% ======================================================================
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+\markboth{Preface}{Preface}
+
+This book is about light that refuses to turn back.
+
+In an ordinary optical waveguide, every imperfection---a bend, a
+scratch, a change in refractive index---scatters some light backward.
+Over long distances, backward scattering accumulates and degrades any
+signal carried by the light.  This is not an engineering failure; it is
+a consequence of time-reversal symmetry, which guarantees that every
+forward-propagating mode has a backward partner at the same frequency.
+
+In 2005, Haldane and Raghu proposed a way to break this symmetry in
+photonic crystals, creating channels where light can propagate in only
+one direction.  These ``one-way waveguides'' are the photonic analogs of
+the chiral edge states in the quantum Hall effect.  In 2009, Wang,
+Chong, Joannopoulos, and Solja\v{c}i\'{c} demonstrated the effect
+experimentally: microwave radiation travelling along the edge of a
+gyromagnetic photonic crystal with a forward-to-backward ratio
+exceeding $10^5$.
+
+The physics behind this phenomenon is \emph{topological}.  Each
+electromagnetic band in a periodic medium carries a global invariant
+---the Chern number---that counts how many times the Berry phase of the
+Bloch modes winds as the crystal momentum sweeps the Brillouin zone.
+When two media with different Chern numbers are joined, unidirectional
+edge modes necessarily appear at the interface.  The number and
+direction of these modes are fixed by topology and cannot be removed by
+any perturbation that preserves the bulk band gap.
+
+\paragraph{Why this book.}
+
+Topological photonics has grown rapidly since 2005.  Excellent reviews
+exist, notably those by Lu, Joannopoulos, and Solja\v{c}i\'{c} (2014),
+Khanikaev and Shvets (2017), and Ozawa et~al.\ (2019).  Yet there is no
+monograph that develops the subject \emph{from Maxwell's equations},
+with the care and completeness expected of a graduate-level text in
+mathematical physics.
+
+Most treatments borrow the formalism of electronic topological
+insulators---tight-binding Hamiltonians, Bloch electrons, Kramers
+degeneracy---and graft photonic examples onto it.  This approach is
+efficient for researchers already fluent in condensed-matter topology,
+but it obscures what is specific to electromagnetism: the six-component
+field structure, the material-dependent energy inner product, the
+bosonic time reversal with $\Top^2=+1$, and the role of dispersive and
+bianisotropic media.
+
+This book takes a \emph{Maxwell-first} approach.  Every concept is
+derived from the macroscopic Maxwell equations and the electromagnetic
+energy inner product, not imported from condensed-matter theory by
+analogy.  Electronic parallels are mentioned for orientation, but they
+never replace the electromagnetic derivations.
+
+\paragraph{Structure.}
+
+The book is organised in five parts.
+
+\textbf{Part~I} (Chapters 1--5) builds the foundation: the Maxwell
+equations as a first-order dynamical system, the electromagnetic energy
+inner product, normal modes, Bloch theory for periodic media, and the
+Berry connection, curvature, and Chern number for Maxwell bands.
+
+\textbf{Part~II} (Chapters 6--10) develops the theory of photonic Chern
+insulators: Dirac cones from lattice symmetry, time-reversal breaking
+by gyrotropic media, the one-way interface mode at a domain wall,
+the Wang microwave experiment, and numerical methods for computing
+Chern numbers.
+
+\textbf{Part~III} (Chapters 11--14) covers other two-dimensional
+topological phases: reciprocal designs with pseudospin, valley-Hall
+photonic crystals, Floquet (time-modulated) systems, and
+one-dimensional topology including the Zak phase and the SSH model.
+
+\textbf{Part~IV} (Chapters 15--16) extends the framework to three
+dimensions (Weyl points and surface arcs) and synthetic dimensions
+(internal degrees of freedom as extra lattice coordinates).
+
+\textbf{Part~V} (Chapters 17--18) addresses non-Hermitian topology
+(loss, gain, exceptional points, topological lasers) and nonlinear
+and quantum frontiers (topological solitons, many-body photonic
+states, polaritons).
+
+Four appendices provide reference material: vector identities and
+functional analysis (A), differential forms and Chern classes (B),
+numerical recipes with pseudocode (C), and material tensors with sign
+conventions (D).
+
+\paragraph{Prerequisites and audience.}
+
+The intended reader has completed graduate courses in electrodynamics
+(at the level of Jackson or Griffiths) and has some exposure to
+quantum mechanics and solid-state physics.  No prior knowledge of
+topology, differential geometry, or condensed-matter topological
+insulators is assumed; these ideas are developed as they arise,
+motivated by the electromagnetic problems that require them.
+
+\paragraph{Exercises.}
+
+Each chapter ends with exercises ranging from straightforward
+verifications to open-ended explorations.  Working through these
+exercises is essential for developing the physical and mathematical
+intuition needed to apply topological ideas to new photonic systems.
+
+\paragraph{Conventions.}
+
+We use SI units throughout, with the time-harmonic convention
+$\ee^{-\ii\omega t}$ and $\omega>0$ for physical frequencies.  The
+complete notation is summarised in the next chapter and in Appendix~D.
+
+\paragraph{Acknowledgements.}
+
+This work builds on the contributions of many researchers who have
+shaped topological photonics into a vibrant field.  Special
+acknowledgement is due to the pioneering theoretical work of Haldane
+and Raghu, the experimental breakthroughs of Wang, Chong, Joannopoulos,
+and Solja\v{c}i\'{c}, and the comprehensive reviews that have made the
+field accessible to a broad audience.
+
+\vspace{1cm}
+
+\hfill\emph{The Authors}
+
+\hfill\emph{2026}

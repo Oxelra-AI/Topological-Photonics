@@ -1,0 +1,109 @@
+name: Build LaTeX Diff PDF
+
+on:
+  pull_request:
+    paths:
+      - "**/*.tex"
+      - "**/*.bib"
+      - "figures/**"
+      - ".github/workflows/build-latex-diff.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout proposed version from pull request
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: new
+          fetch-depth: 0
+
+      - name: Checkout base version from pull request
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: old
+          fetch-depth: 0
+
+      - name: Install latexdiff
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexdiff
+
+      - name: Show compared revisions
+        run: |
+          echo "Base revision:"
+          git -C old rev-parse --short HEAD
+          echo "Proposed revision:"
+          git -C new rev-parse --short HEAD
+
+      - name: Copy old figure assets missing from new version
+        shell: bash
+        run: |
+          mkdir -p new/figures
+          if [ -d old/figures ]; then
+            cp -n old/figures/* new/figures/ 2>/dev/null || true
+          fi
+
+      - name: Normalize macro include for latexdiff
+        shell: bash
+        run: |
+          perl -0pi -e 's/\\IfFileExists\{macros\.tex\}\{\\input\{macros\.tex\}\}\{\}/\\input{macros.tex}/g' old/main.tex new/main.tex
+
+      - name: Create flattened diff source
+        shell: bash
+        run: |
+          latexdiff \
+            --flatten \
+            --type=UNDERLINE \
+            --append-safecmd="cite,citep,citet,ref,eqref,cref,Cref,url,href,includegraphics" \
+            --exclude-textcmd="chapter,section,subsection,subsubsection,caption" \
+            old/main.tex new/main.tex > new/main-diff.tex
+
+      - name: Add right-side diff markers
+        shell: bash
+        run: |
+          perl -0pi -e 's/\\begin\{document\}/\\newcommand{\\DiffSearchMarker}{\\tikz[remember picture,overlay,baseline]{\\node[anchor=base west,inner sep=0pt,text=magenta,font=\\scriptsize\\bfseries\\upshape] at ([xshift=-1.55cm]current page.east |- 0,0) {[δ]};}}\n\\let\\OriginalDIFadd\\DIFadd\n\\let\\OriginalDIFdel\\DIFdel\n\\renewcommand{\\DIFadd}[1]{\\DiffSearchMarker\\OriginalDIFadd{#1}}\n\\renewcommand{\\DIFdel}[1]{\\DiffSearchMarker\\OriginalDIFdel{#1}}\n\\begin{document}/' new/main-diff.tex
+
+      - name: Compile diff PDF
+        id: compile_diff
+        continue-on-error: true
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: new
+          root_file: main-diff.tex
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: false
+
+      - name: Upload diff PDF
+        if: steps.compile_diff.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-diff-pdf
+          path: new/main-diff.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload diff debug files
+        if: steps.compile_diff.outcome != 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-diff-debug-source
+          path: |
+            new/main-diff.tex
+            new/main-diff.log
+            new/*.log
+            new/*.blg
+            new/*.aux
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Fail if diff PDF did not compile
+        if: steps.compile_diff.outcome != 'success'
+        run: exit 1

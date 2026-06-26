@@ -1,0 +1,24 @@
+# LaTeX build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# Generated root PDFs; figure PDFs under figures/ are source assets
+/main.pdf

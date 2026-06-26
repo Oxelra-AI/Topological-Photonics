@@ -1,0 +1,183 @@
+% ======================================================================
+%  Notation and Conventions
+% ======================================================================
+
+\chapter*{Notation and Conventions}
+\addcontentsline{toc}{chapter}{Notation and Conventions}
+\markboth{Notation and Conventions}{Notation and Conventions}
+
+\section*{Time-harmonic convention}
+
+All frequency-domain quantities use the engineering convention
+$\ee^{-\ii\omega t}$ with $\omega>0$.  In this convention, a forward
+plane wave propagating in the $+z$ direction has the form
+$\ee^{\ii(kz-\omega t)}$.  Absorption corresponds to
+$\imag\varepsilon>0$; gain corresponds to $\imag\varepsilon<0$.  The opposite convention $\ee^{+\ii\omega t}$
+is common in the condensed-matter literature; formulas imported from
+such sources require a complex conjugation of all constitutive
+parameters.
+
+\section*{Units}
+
+SI (MKSA) units are used throughout.  The fundamental electromagnetic
+constants are:
+\begin{align}
+  c &= 2.998\times 10^8\;\mathrm{m/s}\,,\\
+  \varepsilon_0 &= 8.854\times 10^{-12}\;\mathrm{F/m}\,,\\
+  \mu_0 &= 1.257\times 10^{-6}\;\mathrm{H/m}\,,\\
+  Z_0 &= \sqrt{\mu_0/\varepsilon_0} = 376.7\;\Omega\,.
+\end{align}
+Frequencies are written as $\omega$ (angular, $\mathrm{rad/s}$) or
+$\nu=\omega/(2\pi)$ (in Hz) as appropriate.  Wavevectors have
+dimensions of inverse length ($\mathrm{m}^{-1}$) and are written
+as $\kvec=(k_x,k_y,k_z)$.
+
+\section*{Electromagnetic fields}
+
+\begin{center}
+\begin{tabular}{lll}
+  \toprule
+  \textbf{Symbol} & \textbf{Name} & \textbf{SI unit} \\
+  \midrule
+  $\Efield$ & Electric field & $\mathrm{V/m}$ \\
+  $\Hfield$ & Magnetic field & $\mathrm{A/m}$ \\
+  $\Dfield$ & Electric displacement & $\mathrm{C/m}^2$ \\
+  $\Bfield$ & Magnetic flux density & $\mathrm{T}$ \\
+  $\emfield=(\Efield,\Hfield)^T$ &
+    Six-component electromagnetic field & --- \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Material tensors}
+
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Symbol} & \textbf{Meaning} \\
+  \midrule
+  $\epst$ & Relative permittivity tensor ($3\times 3$) \\
+  $\mut$ & Relative permeability tensor ($3\times 3$) \\
+  $\xit,\zetat$ & Magneto-electric coupling tensors ($3\times 3$) \\
+  $\Mmat$ & $6\times 6$ material matrix:
+    $\bigl(\begin{smallmatrix}\varepsilon_0\epst & c^{-1}\xit\\
+    c^{-1}\zetat&\mu_0\mut\end{smallmatrix}\bigr)$ \\
+  $\Mgmat(\omega)$ & Energy (Brillouin) metric:
+    $\partial_\omega[\omega\Mmat(\omega)]$ \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Operators}
+
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Symbol} & \textbf{Meaning} \\
+  \midrule
+  $\Maxop$ & Maxwell curl operator (six-component):
+    $\bigl(\begin{smallmatrix}0&\ii\nabla\times\\
+    -\ii\nabla\times&0\end{smallmatrix}\bigr)$ \\
+  $\Maxop(\kvec)$ & Bloch-reduced curl operator at wavevector $\kvec$ \\
+  $\Hamop=\Mmat^{-1}\Maxop$ & Effective Maxwell ``Hamiltonian'' \\
+  $\Top$ & Time-reversal operator (anti-unitary, $\Top^2=+1$) \\
+  $\Pop$ & Spatial inversion (parity) operator \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Inner product}
+
+The electromagnetic energy inner product for six-component fields is
+\begin{equation*}
+  \emip{\emfield_1}{\emfield_2}
+  = \int_\Omega\emfield_1^\dagger(\rvec)\,\Mmat(\rvec)\,
+    \emfield_2(\rvec)\,\dd^d r\,.
+\end{equation*}
+When the material is dispersive, the energy metric $\Mgmat$ replaces
+$\Mmat$ in mode orthogonality and Berry-connection formulas.
+
+\section*{Brillouin zone and Bloch modes}
+
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Symbol} & \textbf{Meaning} \\
+  \midrule
+  $\avec_1,\avec_2$ & Lattice vectors \\
+  $\Gvec_1,\Gvec_2$ & Reciprocal lattice vectors \\
+  $\BZ$ & First Brillouin zone \\
+  $\kvec$ & Bloch wavevector \\
+  $\mathbf{u}_{n\kvec}(\rvec)$ & Cell-periodic Bloch eigenmode \\
+  $\omega_{n\kvec}$ & Band frequency (eigenvalue) \\
+  $K,K'$ & Brillouin-zone corners of a hexagonal lattice \\
+  $\Gamma,M,X$ & High-symmetry points \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Berry geometry}
+
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Symbol} & \textbf{Meaning} \\
+  \midrule
+  $\Aberry_n(\kvec)$ & Berry connection of band $n$ \\
+  $\Omega_n(\kvec)$ & Berry curvature of band $n$ \\
+  $\Chern_n$ & First Chern number of band $n$ \\
+  $\Chern_{\mathrm{gap}}$ & Gap Chern number (sum over bands below the gap) \\
+  $\Chern_s$ & Spin Chern number \\
+  $\Chern_v$ & Valley-contrast Chern number \\
+  $\Zak$ & Zak phase (1D Berry phase) \\
+  $\Wloop(k_y)$ & Wilson loop operator at $k_y$ \\
+  $\Aberryvec$ & Berry connection vector (3D) \\
+  $\boldsymbol{\Omega}$ & Berry curvature vector (3D) \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Pauli and spin-1 matrices}
+
+The $2\times 2$ Pauli matrices are
+\begin{equation*}
+  \sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+  \sigma_y=\begin{pmatrix}0&-\ii\\\ii&0\end{pmatrix},\quad
+  \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\end{equation*}
+The $3\times 3$ spin-1 matrices $L_a$ (used in the six-component
+Maxwell formulation) are $(L_b)_{ac}=\ii\epsilon_{abc}$, where
+$\epsilon_{abc}$ is the Levi-Civita symbol.
+
+\section*{Abbreviations}
+
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  BZ & Brillouin zone \\
+  TE & Transverse electric (in-plane $\Efield$, out-of-plane $H_z$) \\
+  TM & Transverse magnetic (in-plane $\Hfield$, out-of-plane $E_z$) \\
+  TR & Time reversal \\
+  QHE & Quantum Hall effect \\
+  SSH & Su--Schrieffer--Heeger \\
+  YIG & Yttrium iron garnet ($\mathrm{Y_3Fe_5O_{12}}$) \\
+  PWE & Plane-wave expansion \\
+  FDFD & Finite-difference frequency-domain \\
+  FEM & Finite-element method \\
+  EP & Exceptional point \\
+  AFTI & Anomalous Floquet topological insulator \\
+  OAM & Orbital angular momentum \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Cross-reference conventions}
+
+Equations are numbered within chapters as (chapter.number).
+Theorems, propositions, definitions, remarks, and exercises share a
+single counter per chapter.  Chapters, sections, equations, and figures
+are referenced with the usual LaTeX commands (for example,
+\verb|\ref| for numbered objects and \verb|\eqref| for displayed
+equations), using the semantic labels introduced in the source files.
+Citations are managed by \texttt{biblatex} and appear as numerical
+references in the text.
