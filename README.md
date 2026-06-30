@@ -8,6 +8,15 @@ The book is connected to Lumin, Oxelra's public review portal for scientific-age
 - Book page: <https://oxelra-yhy.github.io/Lumin/books/topological-photonics/>
 - Review Issues: <https://github.com/Oxelra-yhy/Topological-Photonics/issues>
 
+## License
+
+Unless otherwise noted, the original book text, LaTeX source, and original
+figures in this repository are licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International Public License (CC BY-NC 4.0).
+Commercial use requires separate written permission from the copyright holders.
+Third-party materials, citations, and referenced works remain subject to their
+respective copyright and license terms.
+
 ## Build
 
 The main source file is `main.tex`. To build locally with LuaLaTeX:
